@@ -1,1 +1,143 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Reddit Post Comparison</title>\n    <link rel="stylesheet" href="styles.css">\n</head>\n<body>\n    <header>\n        <h1>Reddit Post Comparison</h1>\n    </header>\n    <main>\n        <section id="post-comparison">\n            <div class="post-container">\n                <h2>Post Title 1</h2>\n                <p>Post content for Reddit post 1 goes here.</p>\n            </div>\n            <div class="post-container">\n                <h2>Post Title 2</h2>\n                <p>Post content for Reddit post 2 goes here.</p>\n            </div>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2026 Reddit Post Comparison</p>\n    </footer>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human vs AI - Reddit Post Comparison Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🔍</span>
+                <span class="logo-text">Human vs AI</span>
+            </div>
+            <div class="navbar-stats">
+                <span class="stat-item">Score: <span id="score">0</span></span>
+                <span class="stat-item">Streak: <span id="streak">0</span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h1>Can you tell the difference?</h1>
+            <p>One post was written by a human, one by an AI. Which is which?</p>
+        </div>
+
+        <div class="comparison-container">
+            <!-- Post A -->
+            <div class="post-card post-a">
+                <div class="post-header">
+                    <div class="post-meta">
+                        <div class="subreddit">r/dating_advice</div>
+                        <span class="post-author">Posted by u/user_<span id="authorA">12345</span></span>
+                        <span class="post-time">• 2 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="post-title">
+                    <h2 id="titleA">My girlfriend asked me to choose between her and my best friend</h2>
+                </div>
+
+                <div class="post-content">
+                    <p id="contentA">I've been dating my girlfriend for about 3 years now, and she's become a huge part of my life. My best friend and I have known each other since we were kids. Lately, my girlfriend has been expressing concerns about how much time I spend with him. She says she feels like he's always getting in the way of our relationship.
+
+Last night, things came to a head when she asked me to choose between her and him. I was shocked and didn't know what to say. My best friend is really important to me, but so is my relationship. I love my girlfriend, but I also can't imagine my life without my best friend.
+
+I'm completely torn. Has anyone else dealt with a similar situation? How did you handle it? I need some advice because I feel like whatever decision I make will hurt someone I care about deeply.</p>
+                </div>
+
+                <div class="post-footer">
+                    <div class="post-stats">
+                        <span class="stat">↑ 2.3K</span>
+                        <span class="stat">💬 523 comments</span>
+                        <span class="stat">⤴ Share</span>
+                    </div>
+                </div>
+
+                <div class="choice-buttons">
+                    <button class="vote-btn human-btn" onclick="selectPost('A', 'human')">
+                        <span class="btn-icon">👤</span>
+                        <span class="btn-text">Human Written</span>
+                    </button>
+                    <button class="vote-btn ai-btn" onclick="selectPost('A', 'ai')">
+                        <span class="btn-icon">🤖</span>
+                        <span class="btn-text">AI Written</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Post B -->
+            <div class="post-card post-b">
+                <div class="post-header">
+                    <div class="post-meta">
+                        <div class="subreddit">r/dating_advice</div>
+                        <span class="post-author">Posted by u/user_<span id="authorB">67890</span></span>
+                        <span class="post-time">• 4 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="post-title">
+                    <h2 id="titleB">Need help dealing with trust issues in my relationship</h2>
+                </div>
+
+                <div class="post-content">
+                    <p id="contentB">So like, my bf keeps texting this girl from his work and it's been bugging me. He says nothing is going on but I just get this feeling, you know? Like I can feel something off even though he hasn't really done anything wrong that I can prove. 
+
+We've been together for like 8 months and it's been really good but now I'm starting to wonder if I should just snoop through his phone to see what's really going on. I know that sounds crazy but I'm getting more and more anxious about it every day.
+
+My friends say I should just ask him but I feel like if I do he'll just lie to me. I'm stuck between wanting to trust him but also feeling like I need to know what he's talking about with her. What should I do? Is it normal to feel this way or am I being paranoid? Any advice would help honestly.</p>
+                </div>
+
+                <div class="post-footer">
+                    <div class="post-stats">
+                        <span class="stat">↑ 1.8K</span>
+                        <span class="stat">💬 389 comments</span>
+                        <span class="stat">⤴ Share</span>
+                    </div>
+                </div>
+
+                <div class="choice-buttons">
+                    <button class="vote-btn human-btn" onclick="selectPost('B', 'human')">
+                        <span class="btn-icon">👤</span>
+                        <span class="btn-text">Human Written</span>
+                    </button>
+                    <button class="vote-btn ai-btn" onclick="selectPost('B', 'ai')">
+                        <span class="btn-icon">🤖</span>
+                        <span class="btn-text">AI Written</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Modal -->
+        <div id="resultModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="result-header">
+                    <h2 id="resultTitle">Correct!</h2>
+                </div>
+                <div class="result-body">
+                    <p id="resultMessage">Great job! You correctly identified the post.</p>
+                    <div class="result-details">
+                        <p><strong>Post A:</strong> <span id="resultA">Human Written</span></p>
+                        <p><strong>Post B:</strong> <span id="resultB">AI Written</span></p>
+                    </div>
+                </div>
+                <div class="result-footer">
+                    <button class="next-btn" onclick="loadNextPair()">Next Pair →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultOverlay" class="modal-overlay hidden" onclick="closeModal()"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Human vs AI - Can you tell the difference?</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
