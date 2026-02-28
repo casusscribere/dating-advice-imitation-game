@@ -1,50 +1,40 @@
-/* Styles for the Post Comparison Interface */
-
-body {
+.body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    background-color: #f4f4f4;
 }
 
-.container {
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    margin: 20px auto;
     max-width: 800px;
-    margin: auto;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.post {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.post:last-child {
-    border-bottom: none;
-}
-
-.title {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.content {
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-.compare-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
+.post-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #e9ecef;
 }
 
-.compare-button:hover {
-    background-color: #218838;
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
